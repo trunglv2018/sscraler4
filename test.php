@@ -188,13 +188,13 @@ foreach($links as $link) {
      	
         $phrase = str_replace(" ","%20", $search);
         if($domain== 'google.com') {
-            return 'https://www.google.com/search?q=' . $phrase . '&glp=1&hl=en&gl=us&tbs=&pws=1&gws_rd=ssl&uule=w+CAIQICINVW5pdGVkIFN0YXRlcw==';
+            return 'https://www.google.com/search?q=' . $phrase . '&glp=1&hl=en&gl=us&tbs=&pws=1&gws_rd=ssl&uule=w+CAIQICINVW5pdGVkIFN0YXRlcw==&num=20';
         } else if($domain== 'google.com.vn') {
-            return 'https://www.google.com/search?q=' . $phrase . '&oq=' . $phrase;
+            return 'https://www.google.com/search?q=' . $phrase . '&oq=' . $phrase.'&num=20';
         } else{
         	$domain_arr = explode('.',$domain);
 		$gl = $domain_arr[sizeof($domain_arr)-1];
-            return 'https://www.'.$domain.'/search?q=' . $phrase . '&oq=' . $phrase . '&gl='.$gl;
+            return 'https://www.'.$domain.'/search?q=' . $phrase . '&oq=' . $phrase . '&gl='.$gl.'&num=20';
         }
     }
     //function getUrl($search, $global_search){
